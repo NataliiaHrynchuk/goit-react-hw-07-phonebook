@@ -1,14 +1,15 @@
 import {Box} from 'components/Box.styled';
 import { Button } from 'components/Button.styled';
 import { useSelector } from 'react-redux';
-import { getContact } from 'redux/contacts/contactsSelectors';
+import { selectContacts } from 'redux/contacts/contactsSelectors';
 import { getFilter } from 'redux/filter/filterSelectors';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contacts/contactsSlice';
+import { deleteContact } from 'redux/contacts/contactsOperations';
 
 export const ContactList = () => {
     const dispatch = useDispatch();
-    const contacts = useSelector(getContact);
+    
+    const contacts = useSelector(selectContacts);
     const filter = useSelector(getFilter).toLowerCase();
     const getVisibleContacts =
         filter ?

@@ -5,15 +5,15 @@ import {Label} from 'components/Label.styled';
 import {Text} from 'components/Text.styled';
 import { Button } from 'components/Button.styled';
 import { useDispatch } from "react-redux";
-import { addContact } from "redux/contacts/contactsSlice";
+import { addContact } from "redux/contacts/contactsOperations";
 import { useSelector } from "react-redux";
-import { getContact } from 'redux/contacts/contactsSelectors';
+import { selectContacts } from 'redux/contacts/contactsSelectors';
 
 export default function ContactForm() {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
-    const contacts = useSelector(getContact);
+    const contacts = useSelector(selectContacts);
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
