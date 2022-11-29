@@ -1,13 +1,13 @@
 import {Text} from 'components/Text.styled';
 import {Label} from 'components/Label.styled';
 import { Box } from 'components/Box.styled';
-import { getFilter } from 'redux/filter/filterSelectors';
+import { selectFilter } from 'redux/filter/filterSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filter/filterSlice';
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(getFilter);
+    const filter = useSelector(selectFilter);
     const changeFilter = event => {
         dispatch(setFilter(event.currentTarget.value));
     };
