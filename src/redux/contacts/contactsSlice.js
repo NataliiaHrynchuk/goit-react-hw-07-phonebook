@@ -30,13 +30,13 @@ const contactsSlice = createSlice({
         [addContact.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            state.items.push(action.payload);
+            state.items.unshift(action.payload);
         },
         [deleteContact.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            let contacts = state.items.filter(contact => contact.id !== action.payload.id);
-            state.items = contacts;
+            state.items = state.items.filter(contact => contact.id !== action.payload.id);
+             
         }
     }
 });
