@@ -12,7 +12,7 @@ export default function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsloading);
   const error = useSelector(selectError);
-  // const contacts = useSelector(selectContacts);
+  
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -23,11 +23,8 @@ export default function App() {
       <ContactForm />
       <h2>Contacts</h2>
       {isLoading && !error && <b>Request in progress...</b>}
-          
-          <Filter/>
-          <ContactList/>
-          
-        
+      <Filter/>
+      <ContactList/>
     </Box>
   );
 };

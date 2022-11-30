@@ -8,7 +8,6 @@ import { deleteContact } from 'redux/contacts/contactsOperations';
 export const ContactList = () => {
     const dispatch = useDispatch();
     const contacts = useSelector(selectVisibleContacts);
-    
             
     return (
             

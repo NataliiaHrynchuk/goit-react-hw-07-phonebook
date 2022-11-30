@@ -11,6 +11,7 @@ export const Filter = () => {
     const changeFilter = event => {
         dispatch(setFilter(event.currentTarget.value));
     };
+    
     return (
         <Box
             display="flex"
@@ -18,8 +19,7 @@ export const Filter = () => {
             w="300px"
             gap="10px"
         >
-            <Label htmlFor="id-filter"
-            >
+            <Label htmlFor="id-filter">
                 Find contacts by name
             </Label>
             <Text
