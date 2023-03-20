@@ -36,7 +36,6 @@ const contactsSlice = createSlice({
             state.isLoading = false;
             state.error = null;
             state.items = state.items.filter(contact => contact.id !== action.payload.id);
-             
         }
     }
 });
